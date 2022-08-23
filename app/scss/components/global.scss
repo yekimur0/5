@@ -1,0 +1,72 @@
+$fontFamily: 'Gliroy', sans-serif;
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+    @media(max-width: $xl) {
+        font-size: 14px;
+    }
+    @media(max-width: $tabletlg) {
+        font-size: 12px;
+    }
+    @media(max-width: $tablet) {
+        font-size: 10px;
+    }
+    @media(max-width: $phone) {
+        font-size: 8px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    height: 100%;
+    line-height: 1.5;
+    font-family: $fontFamily;
+    background-color: #403C3B;
+}
+
+body.overlay {
+    overflow: hidden;
+    touch-action: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media(max-width: $phone) {
+   body.lock {
+    overflow: hidden;
+    touch-action: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+   }
+ 
+    
+}
+
+.hidden {
+    display: none;
+}
+.hidden-a {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+

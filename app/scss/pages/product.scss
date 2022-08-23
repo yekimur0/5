@@ -1,0 +1,195 @@
+.product-main {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.137);
+    @media(max-width: $tabletlg) {
+      margin-top: 4rem;
+    }
+  &__back {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 19px;
+    color: #fff;
+    position: relative;
+    padding-left: 36px;
+    display: block;
+    margin-top: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      background: url("../../images/icons/product-back.svg") center center
+        no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.cart-product {
+  display: flex;
+  background: linear-gradient(90deg, #494544 0%, #504b4a 100%);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin-top: 1.8rem;
+  @media(max-width: $tablet) {
+    flex-direction: column;
+  }
+  &__image {
+    position: relative;
+    padding-left: 50%;
+    padding-bottom: 20%;
+    @media(max-width: $tablet) {
+      padding-top: 50%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      object-fit: cover;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+      max-width: 100%;
+    }
+  }
+}
+
+.info-product {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 2.8rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    @media(max-width: $tabletlg) {
+      bottom: 3.1rem;
+    }
+    @media(max-width: $tablet) {
+      bottom: 3.4rem;
+    }
+    @media(max-width: $phone) {
+      bottom: 3.8rem
+    }
+  }
+  &__wrapper {
+    padding: 2.3rem 9.43rem 1.56rem 3.12rem;
+  }
+  &__title {
+    font-size: 25px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  &__desc {
+    font-size: 14px;
+    line-height: 16px;
+    color: #cfcfcf;
+    font-weight: 400;
+    margin-bottom: 8.543rem;
+  }
+  &__weight {
+    font-size: 14px;
+    color: #fff;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 1.3rem;
+  }
+  &__actions {
+    margin-bottom: 1.9rem;
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: $darkgreen;
+    border: none;
+    min-width: 145px;
+    padding: 16px 0;
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: 25px;
+    position: relative;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $lightgreen;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: 0;
+      width: 19px;
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 20px;
+      height: 19px;
+      background: url("../../images/icons/shopping-bag.svg") center center
+        no-repeat;
+      border-left: 1px solid #fff;
+    }
+  }
+  &__price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+
+    color: #ffffff;
+  }
+}
+
+.calories {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &-name {
+      margin-bottom: 10px;
+    }
+    &-amount {
+      font-weight: 600;
+    }
+    &:not(:last-child) {
+      margin-right: 3.125rem;
+    }
+  }
+}
+
+.addition {
+    padding-top: 50px;
+    &__title {
+        margin-bottom: 3.125rem;
+    }
+}

@@ -1,0 +1,56 @@
+._title  {
+    font-family: $fontFamily;
+    font-weight: 700;
+    font-size: 2.125rem;
+    color: $light;
+    text-transform: uppercase;
+    margin-left: 7rem;
+    position: relative;
+    @media(max-width: $phone) {
+        font-size: 2.6rem;
+        margin-left: 4.4rem;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 10px;
+        width: 4px;
+        height: 1.8rem;
+        background-color: $darkgreen;
+        @media(max-width: $phone) {
+            top: 8px;
+        }
+    }
+}
+
+.section {
+    margin-bottom: 2.8rem;
+}
+
+._btn-food {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $lightgreen;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 14px 5px;
+    min-width: 137px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.col {
+    height: 100%;
+}
+
+.owl-stage {
+    display: flex;
+    width: 100%;
+}
+
+.swiper-container {
+    width: 600px;
+}

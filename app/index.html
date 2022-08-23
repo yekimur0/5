@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <title>Document</title>
+ </head>
+
+
+ <body>
+  <div class="page">
+    <header class="header">
+        <div class="header__container __container">
+         <div class="header__inner">
+          <div class="header__menu menu-header">
+           <div class="menu-header__icon">
+            <img src="./images/icons/menu-burger.svg" alt="Меню" />
+           </div>
+           <div class="menu-header__wrapper">
+            <ul class="menu-header__list">
+                <li class="menu-header__item"><a href="#">Холодные закуски</a></li>
+                <li class="menu-header__item"><a href="#">Горячие закуски</a></li>
+                <li class="menu-header__item"><a href="#">Мясные закуски</a></li>
+                <li class="menu-header__item"><a href="#">Супы</a></li>
+                <li class="menu-header__item"><a href="#">Рыбные блюда</a></li>
+                <li class="menu-header__item"><a href="#">Гриль меню</a></li>
+                <li class="menu-header__item"><a href="#">Фирменные блюда</a></li>
+                <li class="menu-header__item"><a href="#">Напитки</a></li>
+               </ul>
+           </div>
+          </div>
+    
+          <div class="header__logo logo">
+           <a href="#"><img src="./images/icons/logo.svg" alt="Логотип" /></a>
+          </div>
+    
+          <div class="header__form">
+           <form action="" class="header-form">
+            <span class="header-form__icon"></span>
+            <input
+             type="text"
+             class="header-form__input"
+             placeholder="Введите адрес доставки"
+            />
+            <button type="submit" class="header-form__search"></button>
+           </form>
+          </div>
+    
+          <div class="header__contacts contacts-header">
+           <div class="contacts-header__icon">
+            <img src="./images/icons/phone.svg" alt="Телефон" />
+           </div>
+           <div class="contacts-header__items">
+            <span class="contacts-header__text">Контакты</span>
+            <a href="tel:+79175105759" class="contacts-header__phone"
+             >+7 (917) 510-57-59</a
+            >
+           </div>
+          </div>
+    
+          <div class="header__cart cart">
+           <a href="#" class="cart__items">
+            <span class="cart__text">корзина</span>
+            <span class="cart__icon"><img src="./images/icons/cart.svg" alt=""></span>
+            <span class="cart__counter hidden">1</span>
+            </a>
+          </div>
+         </div>
+        </div>
+       </header>
+    
+       <main class="main">
+        <picture>
+         <source
+          srcset="./images/main/main-bg-phone.jpg"
+          media="(max-width: 600px)"
+         />
+         <img src="./images/main/main-bg.jpg" alt="Доставка вкуснейших блюд" />
+        </picture>
+       </main>
+    
+       <section class="section nav">
+        <div class="nav__container __container">
+         <nav class="nav__menu">
+          <ul class="menu__list menu">
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Холодные закуски</a>
+           </li>
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Горячие закуски</a>
+           </li>
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Мясные закуски</a>
+           </li>
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Супы</a>
+           </li>
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Рыбные блюда</a>
+           </li>
+           <li class="menu__item swiper-slide">
+            <a href="#" class="menu__item--link">Гриль меню</a>
+           </li>
+           <li class="menu__item swiper-slide">
+            <a href="#" class="menu__item--link">Фирменные блюда</a>
+           </li>
+           <li class="menu__item">
+            <a href="#" class="menu__item--link">Напитки</a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </section>
+    
+       <section class="section food">
+        <h2 class="food__title _title">Холодные закуски</h2>
+        <!-- cold food row -->
+        <div class="food__row food__cold owl-reponsive owl-carousel owl-theme">
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <a href="product.html" class="food-item__img">
+             <img src="./images/food/cold/01.jpg" alt="" />
+            </a>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Ягненок</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+               Фаршированный гречневой кашей,
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">620 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/02.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Индейка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">450 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/03.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Гусь</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированный яблоками</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">7900 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/04.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Утка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированная рисом, курагой и айвой</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">3230 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+        </div>
+        <!-- cold food row -->
+        <h2 class="food__title _title">Горячие закуски</h2>
+        <!-- hot food row -->
+        <div class="food__row food__hot owl-reponsive owl-carousel owl-theme">
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/01.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Ягненок</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+               Фаршированный гречневой кашей,
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">620 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/02.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Индейка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">450 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/03.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Гусь</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированный яблоками</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">7900 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/04.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Утка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированная рисом, курагой и айвой</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">3230 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+        </div>
+        <!-- hot food row -->
+        <h2 class="food__title _title">Мясные блюда</h2>
+        <div class="food__row food__hot owl-reponsive owl-carousel owl-theme">
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/01.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Ягненок</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+               Фаршированный гречневой кашей,
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">620 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/02.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Индейка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">
+               Фаршированный гречневой кашей, курагой, апельсином и зеленым яблоком
+              </p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">450 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/03.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Гусь</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированный яблоками</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">7900 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+    
+         <div class="col">
+          <div class="food-item-container">
+           <article class="food-item item">
+            <div class="food-item__label">
+             <span class="food-item__counter">1</span>
+            </div>
+            <div class="food-item__img">
+             <img src="./images/food/cold/04.jpg" alt="" />
+            </div>
+            <div class="food-item__body">
+             <div class="food-item__content content-food">
+              <div class="content-food__top">
+               <h4 class="content-food__title">Утка</h4>
+               <span class="content-food__weight">Вес 225г.</span>
+              </div>
+              <p class="content-food__desc">Фаршированная рисом, курагой и айвой</p>
+             </div>
+             <div class="food-item__bottom">
+              <span class="food-item__price">3230 ₽</span>
+              <button class="food-item__btn _btn-food">В корзину</button>
+             </div>
+            </div>
+           </article>
+          </div>
+         </div>
+        </div>
+       </section>
+    
+    
+    
+       <section class="section contacts">
+        <div id="map" class="contacts__map"></div>
+        <div class="contacts__container">
+         <div class="contacts__inner">
+          <div class="contacts__information information">
+           <h5 class="information__title">Контакты</h5>
+           <div class="information__address address-information">
+            <span class="address-information__text">Наш адрес:</span>
+            <address class="address-information__address">
+             Мо, городской округ Красногорс село Ильинкское, Эксперементальная
+             улица, 10
+            </address>
+           </div>
+    
+           <div class="information__mail mail-information">
+            <span class="mail-information__text">Наша почта</span>
+            <a href="mailto:santplp@mail.ru" class="mail-information__mail"
+             >auto.wash@gmail.com</a
+            >
+           </div>
+          </div>
+    
+          <div class="contacts__link">
+           <button class="contacts__link-btn">Забронировать стол</button>
+           <div class="contacts__link-phone">
+               <a href="#">+7 (917) 510-57-59</a>
+               <span>Звоните или оставляйте заявку</span>
+           </div>
+          </div>
+    
+          <div class="contacts__social social-contacts">
+              <span class="social-contacts__text">Мы в соц сетях:</span>
+              <div class="social-contacts__links">
+                  <a href="#" class="social-contacts__link"><img src="./images/icons/facebook.svg" alt=""></a>
+                  <a href="#" class="social-contacts__link"><img src="./images/icons/vk.svg" alt=""></a>
+                  <a href="#" class="social-contacts__link"><img src="./images/icons/youtube.svg" alt=""></a>
+                  <a href="#" class="social-contacts__link"><img src="./images/icons/instagram.svg" alt=""></a>
+              </div>
+          </div>
+         </div>
+        </div>
+       </section>
+    
+    
+    
+       <footer class="footer">
+           <div class="footer__body">
+            <button class="footer__btn" data-name="button-top">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <circle cx="32" cy="32" r="32" fill="white"/>
+             <path d="M34.0607 25.9396C33.4749 25.3538 32.5252 25.3538 31.9394 25.9396L22.3935 35.4856C21.8077 36.0714 21.8077 37.0211 22.3935 37.6069C22.9793 38.1927 23.9291 38.1927 24.5148 37.6069L33.0001 29.1216L41.4854 37.6068C42.0712 38.1926 43.0209 38.1926 43.6067 37.6068C44.1925 37.021 44.1925 36.0712 43.6067 35.4855L34.0607 25.9396ZM34.5001 29.0001L34.5 27.0002L31.5 27.0003L31.5001 29.0001L34.5001 29.0001Z" fill="#222021"/>
+             </svg>
+             </button>
+               <div class="footer__container __container">
+                   <div class="footer__inner">
+                       <div class="footer__information information-footer">
+                           <div class="information-footer__logo"><img src="./images/icons/logo.svg" alt="Логотип"></div>
+                           <p class="information-footer__author">© ООО СК «АПШЕРОН» <br>
+                            Все права защищены. 2010-2020
+                        </p>
+                        <a href="#" class="information-footer__link">Пользовательское соглашение</a>
+                        <a href="#" class="information-footer__link">Карта сайта</a>
+                        <a href="#" class="information-footer__link">Политика конфидециальности</a>
+                       </div>
+                       <ul class="footer__list">
+                           <li class="footer__item"><a href="">О ресторане</a></li>
+                           <li class="footer__item"><a href="">Условия доставки</a></li>
+                           <li class="footer__item"><a href="">Возврат товара</a></li>
+                           <li class="footer__item"><a href="">Акции</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </footer>
+
+  </div>
+
+  <div class="modal-basket">
+    <div class="modal-basket__container">
+        <div class="modal-basket__body">
+            <div class="modal-basket__img"><img src="./images/basket/none-basket.svg" alt=""></div>
+            <div class="modal-basket__title">Корзина пуста</div>
+            <button class="modal-basket__btn" data-name="modal-basket-close">Посмтреть меню</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="https://api-maps.yandex.ru/2.1/?714e8ad4-7fb3-4788-a6fb-bbe02093e528&lang=ru_RU"></script>
+  <script src="js/index.min.js"></script>
+ </body>
+</html>

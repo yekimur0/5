@@ -1,0 +1,110 @@
+.footer {
+ background: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);
+ &__btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+   circle {
+   transition: 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover {
+        fill: $lightgreen;
+       }
+    }
+  }
+  @media(max-width: $phone) {
+    position: absolute;
+    right: 20px;
+  }
+ }
+ &__body {
+  display: flex;
+  align-items: center;
+  padding: 26px 0px 30px 40px;
+  @media(max-width: $xl) {
+  padding: 26px 0px 30px 25px;
+
+  }
+  @media(max-width: $tablet) {
+    padding: 26px 0px 15px 20px
+  }
+  @media(max-width: $phone) {
+    padding: 20px 0px 15px 0px
+  }
+ }
+ &__inner {
+  display: flex;
+  align-items: center;
+  @media(max-width: $phone) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ }
+ &__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 5rem;
+  flex-wrap: wrap;
+  @media(max-width: $tabletlg) {
+    gap: 10px;
+  }
+  @media(max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media(max-width: $phone) {
+   margin-left: 0;
+    
+  }
+ }
+ &__item {
+  list-style: none;
+  a {
+   font-size: 19px;
+   color: #fff;
+   line-height: 24px;
+   font-weight: 400;
+   transition: color 0.3s ease;
+   @media(max-width: $tabletlg) {
+    font-size: 14px;
+   }
+   @media(any-hover: hover) {
+     &:hover {
+      color: $lightgreen
+     }
+   }
+  }
+ }
+}
+
+.information-footer {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ @media(max-width: $phone) {
+  margin-bottom: 2rem;
+ }
+
+ &__logo {
+  margin-bottom: 15px;
+ }
+ &__author {
+  font-size: 12px;
+  line-height: 14px;
+  color: #CFCFCF;
+  margin-bottom: 7px;
+  @media(max-width: $phone) {
+    font-size: 10px;
+  }
+ }
+ &__link {
+  font-size: 14px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  @media(max-width: $phone) {
+    font-size: 12px;
+  }
+ }
+}
+

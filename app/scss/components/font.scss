@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Gliroy";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Gliroy"),
+         /* Если не получилось, загрузит woff2 */
+         url("../../assets/fonts/Gilroy-Bold.woff") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("../../assets/fonts/Gilroy-Bold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Gliroy";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Gliroy"),
+         /* Если не получилось, загрузит woff2 */
+         url("../../assets/fonts/Gilroy-SemiBold.woff") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("../../assets/fonts/Gilroy-SemiBold.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Gliroy";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Gliroy"),
+         /* Если не получилось, загрузит woff2 */
+         url("../../assets/fonts/Gilroy-Regular.woff") format("woff2"),
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("../../assets/fonts/Gilroy-Regular.woff") format("woff");
+  }
