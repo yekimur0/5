@@ -1,0 +1,168 @@
+.order {
+ padding-top: 5rem;
+
+ &__title {
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+ }
+}
+
+.form-order {
+ &__block {
+  background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+  border-radius: 10px; 
+  margin-bottom: 22px;
+  padding: 30px 30px 30px 30px;
+  max-width: 800px;
+  width: 100%;
+ }
+
+ &__title {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 22px;
+ }
+ &__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+ }
+ &__input {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: transparent;
+  min-height: 60px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 10px 20px 30px;
+  outline: none;
+  margin-right: 15px;
+  color: #fff;
+  &::placeholder {
+   color: #fff;
+   font-size: 16px;
+   line-height: 19px;
+  } 
+ }
+
+ .choice {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  &__label {
+   position: relative;
+   margin-right: 20px;
+   min-width: 180px;
+   text-align: center;
+   cursor: pointer;
+   .choice__text {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    border: 1px solid $lightgreen;
+    border-radius: 10px;
+    padding: 20px 0; 
+    font-weight: 700;
+   }
+  }
+  .choice__delivery {
+   opacity: 0;
+   visibility: hidden;
+   position: absolute;
+   left: 0;
+   top: -50%;
+   transform: translateY(50%);
+   &:checked ~ .choice__text {
+    background-color: $lightgreen;
+   }
+  }
+ }
+
+}
+
+.address {
+
+ &__title {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 30px;
+ }
+
+ .address-items {
+  &__label {
+   display: flex;
+   align-items: center;
+   &:not(:last-child) {
+    margin-bottom: 15px;
+   }
+  }
+ }
+ 
+}
+
+.pay {
+ &__items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+ }
+ &__label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+ }
+ &__input {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  &:checked ~ .pay__text {
+   background-color: $lightgreen;
+  }
+ }
+ &__text {
+  font-size: 16px;
+    color: #fff;
+    display: block;
+    border: 1px solid $lightgreen;
+    border-radius: 10px;
+    padding: 20px 0; 
+    font-weight: 700;
+    min-width: 180px;
+ }
+ &__change {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: transparent;
+  min-height: 60px;
+  height: 100%;
+  width: 100%;
+  padding: 20px 10px 20px 30px;
+  outline: none;
+  margin-right: 15px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  &-active {
+   opacity: 1;
+   visibility: visible;
+   position: relative;
+  }
+  &::placeholder {
+   color: #fff;
+   font-size: 16px;
+   line-height: 19px;
+  } 
+ }
+}

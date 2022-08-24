@@ -1,3 +1,5 @@
+'use strict';
+
 $(".owl-carousel").owlCarousel({
   stagePadding: 50,
   items: 4,
@@ -59,8 +61,10 @@ const menuHum = document.querySelector(".menu-header__icon");
 const productItem = document.querySelectorAll(".item");
 const amoutBasket = document.querySelector('.basket__amount-item')
 const totalPriceBasket = document.querySelector('.total__price-pricing')
+const payInput = document.querySelectorAll('.pay__input')
 
-let productArr = [];
+
+let productArr = []
 let keyState = []
 let pricing = []
 
@@ -78,7 +82,12 @@ productItem.forEach((item, index) => {
   item.setAttribute('item', index)
 });
 
-// listener
+document.querySelectorAll('.products-addition__item').forEach((item, index) => {
+  item.setAttribute("id", randomId());
+  item.setAttribute('item-b', index)
+})
+
+// LISTENER
 document.querySelector("body").addEventListener("click", (e) => {
   let target = e.target;
   if (target.closest(".food-item__btn")) {
@@ -110,9 +119,6 @@ document.querySelector("body").addEventListener("click", (e) => {
   }
   if(target.closest('.item-basket__minus')) {
     decreaseItemInBasket(target)
-  }
-  if(target.closest('.products-addition__btn')) {
-    addProductsFromBasket(target)
   }
 });
 
@@ -396,6 +402,7 @@ function removeItem (target) {
   const idPos = item.getAttribute('item')
 
 
+
   const index = productArr.findIndex(item => item.id == id) 
   const indexPos = productArr.findIndex(item => item.idPos == idPos)
 
@@ -409,6 +416,7 @@ function removeItem (target) {
     basketText.innerText = 'Корзина пуста'
   }
 
+  changeTotalPrice(item)
   saveState()
   saveProduct()
 }
@@ -537,47 +545,23 @@ if(totalPriceBasket) {
   freeDelivery ()
 }
 
+function changeTotalPrice (item) {
+  const itemPrice = parseInt(item.querySelector('.item-basket__price').innerText)
+  const totalPrice = document.querySelector('.total__price-pricing')
 
-// добавление дополнительного товара в корзину
-
-function addProductsFromBasket (target) {
-  const item = target.closest('.products-addition__item')
-  const itemImage =  item.querySelector('.products-addition__img').getAttribute('src')
-  const itemTitle = item.querySelector('.products-addition__title').innerText
-  const itemPrice = item.querySelector('.products-addition__price').innerText
-
-  const basketContainer = document.querySelector('.items-basket')
-
-  const productDataBasket = {
-    title: itemTitle,
-    price: itemPrice
-  }
-  
-  const templateProductsBasket = `
-  
-  <div class="items-basket__row" id="${item.id}" item="${item.idPos}">
-    <article class="items-basket__item item-basket">
-    <div class="item-basket__img"><img src="./images/food/cold/01.jpg" alt=""></div>
-    <div class="item-basket__body">
-        <div class="item-basket__content">
-            <h4 class="item-basket__title">${itemTitle}</h4>
-        </div>
-        <div class="item-basket__actions">
-            <div class="item-basket__counter">
-            <button class="item-basket__minus"></button>
-            <span class="item-basket__amount">1</span>
-            <button class="item-basket__plus"></button>
-        </div>
-        <div class="item-basket__price">${itemPrice}</div>
-        <button class="item-basket__remove"></button></div>
-    </div>
-    </article>
-  </div>
-  `
-
-  basketContainer.insertAdjacentHTML('beforeend', templateProductsBasket)
-
-  productArr.push(productDataBasket)
-  saveProduct()
+  const newTOTAL = parseInt( totalPrice.innerText ) - itemPrice
+  totalPrice.innerText = newTOTAL + ' ₽'
 
 }
+
+// блок сдача 
+
+payInput.forEach(item => {
+  item.addEventListener('click', () => {
+    if(item.classList.contains('cash')) {
+      document.querySelector('.pay__change').classList.add('pay__change-active')
+    } else {
+      document.querySelector('.pay__change').classList.remove('pay__change-active')
+    }
+  })
+})
