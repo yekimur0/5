@@ -59,10 +59,10 @@ const menuHum = document.querySelector(".menu-header__icon");
 const productItem = document.querySelectorAll(".item");
 const amoutBasket = document.querySelector('.basket__amount-item')
 const totalPriceBasket = document.querySelector('.total__price-pricing')
+
 let productArr = [];
 let keyState = []
 let pricing = []
-
 
 // Добавляем рандомный Id к каждому продукту
 const randomId = () => {
@@ -110,6 +110,9 @@ document.querySelector("body").addEventListener("click", (e) => {
   }
   if(target.closest('.item-basket__minus')) {
     decreaseItemInBasket(target)
+  }
+  if(target.closest('.products-addition__btn')) {
+    addProductsFromBasket(target)
   }
 });
 
@@ -392,16 +395,12 @@ function removeItem (target) {
   const id = item.id;
   const idPos = item.getAttribute('item')
 
-  let index = productArr.findIndex((item) => item.id)
-  let indexPos = keyState.findIndex((item) => item.idPos)
 
-  if (index = id) {
-    productArr.splice(index, 1)
-  }
-  if(indexPos = idPos) {
-    keyState.splice(index, 1)
-  }
+  const index = productArr.findIndex(item => item.id == id) 
+  const indexPos = productArr.findIndex(item => item.idPos == idPos)
 
+  productArr.splice(index, 1)
+  keyState.splice(indexPos, 1)
 
   item.remove()
   itemInBasket.innerText--
@@ -409,7 +408,6 @@ function removeItem (target) {
   if(itemInBasket.innerText == 0) {
     basketText.innerText = 'Корзина пуста'
   }
-
 
   saveState()
   saveProduct()
@@ -440,6 +438,7 @@ function increaseItemInBasket (target) {
   }
   
   itemAmount.innerText++
+  freeDelivery()
   saveProduct()
 }
 
@@ -470,7 +469,7 @@ function decreaseItemInBasket(target) {
     btnMinusItem.disabled = true
   }
   
-
+  freeDelivery()
   saveState()
   saveProduct()
 }
@@ -502,46 +501,83 @@ checkPriceItem()
   
 }
 
-// function calcTotalPrice () {
-//   if(productArr.length > 0) {
-//     let totalPrice = document.querySelector('.total__price-pricing')
-//     productArr.forEach(item => {
-//       let priceProduct = parseInt(item.price)
-//       pricing.push(priceProduct)
-//     })
-
-//     let nPrice = pricing.reduce((a,b) => a+b)
-//     totalPrice.innerText = nPrice + '₽'
-
-//     productArr.findIndex(item => {
-//       if(item.amount > 1) {
-//         let newTotal = parseInt(totalPrice.innerText) * item.amount
-//         totalPrice.innerText = newTotal + ' ₽'
-//       }
-//     })
-//   }
-// }
-
-function calcTotalPrice () {
-  let itemsPrice = document.querySelectorAll('.item-basket__price')
-  let totalPrice = document.querySelector('.total__price-pricing')
-  itemsPrice.forEach(item => {
-    let priceArr = [...item.innerText]
-
-    let result = priceArr.map(function(item) {
-      let number = parseInt(item)
-      return isNaN(number) ? item : number
-    })
-    const i = result.indexOf(3)
-    const i2 = result.indexOf(3)
-    result.splice(i, 1)
-    result.splice(i2, 1)
-    const word = result.toString().replace(',',' ')
-    console.log(word)
-
+function priceProducts() {
+  let priceProducts = document.querySelectorAll('.item-basket__price')
+  priceProducts.forEach((item) => {
+    let price = parseInt(item.innerText)
+    pricing.push(price)
   })
 }
 
+// считаем итоговую сумму заказа
+function calcTotalPrice () {
+  let total = document.querySelector('.total__price-pricing')
+
+  let newTotal = pricing.reduce((a,b)=> a+b)
+  total.innerText = newTotal + ' ₽'
+}
+
+// проверяем сумму бесплатной доставки
+function freeDelivery () { 
+  const deliveryText = document.querySelector('.total__delivery')
+  const totalPrice = parseInt(document.querySelector('.total__price-pricing').innerText)
+
+  if (totalPrice >= 1500) {
+    deliveryText.innerText = 'Бесплатная доставка'
+  } else if(totalPrice < 1500) {
+    deliveryText.innerText = 'Бесплатная доставка от суммы 1500 ₽'
+  }
+}
+
+
+// запускаем функции если условие совпадает
 if(totalPriceBasket) {
+  priceProducts ()
   calcTotalPrice ()
+  freeDelivery ()
+}
+
+
+// добавление дополнительного товара в корзину
+
+function addProductsFromBasket (target) {
+  const item = target.closest('.products-addition__item')
+  const itemImage =  item.querySelector('.products-addition__img').getAttribute('src')
+  const itemTitle = item.querySelector('.products-addition__title').innerText
+  const itemPrice = item.querySelector('.products-addition__price').innerText
+
+  const basketContainer = document.querySelector('.items-basket')
+
+  const productDataBasket = {
+    title: itemTitle,
+    price: itemPrice
+  }
+  
+  const templateProductsBasket = `
+  
+  <div class="items-basket__row" id="${item.id}" item="${item.idPos}">
+    <article class="items-basket__item item-basket">
+    <div class="item-basket__img"><img src="./images/food/cold/01.jpg" alt=""></div>
+    <div class="item-basket__body">
+        <div class="item-basket__content">
+            <h4 class="item-basket__title">${itemTitle}</h4>
+        </div>
+        <div class="item-basket__actions">
+            <div class="item-basket__counter">
+            <button class="item-basket__minus"></button>
+            <span class="item-basket__amount">1</span>
+            <button class="item-basket__plus"></button>
+        </div>
+        <div class="item-basket__price">${itemPrice}</div>
+        <button class="item-basket__remove"></button></div>
+    </div>
+    </article>
+  </div>
+  `
+
+  basketContainer.insertAdjacentHTML('beforeend', templateProductsBasket)
+
+  productArr.push(productDataBasket)
+  saveProduct()
+
 }
