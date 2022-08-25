@@ -125,94 +125,158 @@
         <a href="basket.html " class="basket__back">в корзину</a>
         <h2 class="order__title _title">Оформление заказа</h2>
 
-        <!-- форма оформления заказа -->
-        <form action="" class="order__form form-order">
-         <div class="form-order__block">
-
-          <div class="form-order__title">1. Контактная информация</div>
-          <label for="" class="form-order__label">
-          <input type="text" class="form-order__input" placeholder="Имя" name="Имя">
-          <input type="text" class="form-order__input" placeholder="Телефон" name="Телефон">
-          </label>
-
-         </div>
-
-         <div class="form-order__block">
-          <div class="form-order__title">2. Доставка</div>
-
-          <div class="form-order__choice choice">
-           <label for="delivery-order" class="choice__label">
-            <input type="radio" checked id="delivery-order" class="form-order__input choice__delivery" name="Доставка">
-            <span class="choice__text">Доставка</span>
+       <div class="order__inner">
+         <!-- форма оформления заказа -->
+         <form action="" class="order__form form-order">
+          <div class="form-order__block">
+ 
+           <div class="form-order__title">1. Контактная информация</div>
+           <label for="" class="form-order__label">
+           <input type="text" class="form-order__input" placeholder="Имя" name="Имя">
+           <input type="text" class="form-order__input" placeholder="Телефон" name="Телефон">
            </label>
-
-           <label for="pickup-order" class="choice__label">
-            <input type="radio" id="pickup-order" class="form-order__input choice__delivery" name="Доставка">
-            <span class="choice__text">Самовывоз</span>
-           </label>
-           <span class="choice__delivery-time">Доставим через  1 час 30 минут</span>
+ 
           </div>
-
-          <div class="form-order__address address">
-
-           <div class="address__title">Адрес доставки</div>
-           
-           <div class="address__items address-items">
-            <label for="" class="address-items__label">
-             <input type="text" class="form-order__input address-items__input" name="Улица" placeholder="Укажите улицу">
-             <input type="text" class="form-order__input address-items__input" name="Номер дома" placeholder="Номер дома">
+ 
+          <div class="form-order__block">
+           <div class="form-order__title">2. Доставка</div>
+ 
+           <div class="form-order__choice choice">
+            <label for="delivery-order" class="choice__label">
+             <input type="radio" checked id="delivery-order" class="form-order__input choice__delivery" name="delivery" value="Доставка">
+             <span class="choice__text">Доставка</span>
             </label>
-
-            <label for="" class="address-items__label">
-             <input type="text" class="form-order__input address-items__input" name="Квартира/Офис" placeholder="Укажите улицу">
-             <input type="text" class="form-order__input address-items__input" name="Номер дома" placeholder="Номер дома">
-             <input type="text" class="form-order__input address-items__input" name="Этаж" placeholder="Этаж">
+ 
+            <label for="pickup-order" class="choice__label">
+             <input type="radio" id="pickup-order" class="form-order__input choice__delivery" name="delivery" value="Самовывоз">
+             <span class="choice__text">Самовывоз</span>
             </label>
+            <span class="choice__delivery-time">Доставим через  1 час 30 минут</span>
+           </div>
+ 
+           <div class="form-order__address address">
+ 
+            <div class="address__title">Адрес доставки</div>
             
-            <label for="" class="address-items__label">
-             <input type="text" class="form-order__input address-items__input" name="Комментарий" placeholder="Комментарий">
-            </label>
-
+            <div class="address__items address-items">
+             <label for="" class="address-items__label">
+              <input type="text" class="form-order__input address-items__input" name="Улица" placeholder="Укажите улицу">
+              <input type="text" class="form-order__input address-items__input" name="Номер дома" placeholder="Номер дома">
+             </label>
+ 
+             <label for="" class="address-items__label">
+              <input type="text" class="form-order__input address-items__input" name="Квартира/Офис" placeholder="Укажите улицу">
+              <input type="text" class="form-order__input address-items__input" name="Номер дома" placeholder="Номер дома">
+              <input type="text" class="form-order__input address-items__input" name="Этаж" placeholder="Этаж">
+             </label>
+             
+             <label for="" class="address-items__label">
+              <input type="text" class="form-order__input address-items__input" name="Комментарий" placeholder="Комментарий">
+             </label>
+ 
+            </div>
+ 
+ 
            </div>
-
-
           </div>
-         </div>
-
-         <div class="form-order__block">
-
-          <div class="form-order__pay pay">
-
-           <div class="form-order__title">3. Оплатить</div>
-
-           <div class="pay__items">
-            <label for="pay-online" class="pay__label">
-             <input type="radio" checked class="pay__input" id="pay-online" name="pay">
-             <span class="pay__text">Оплата онлайн</span>
-            </label>
-
-            <label for="pay-courier" class="pay__label">
-             <input type="radio" class="pay__input" id="pay-courier" name="pay">
-             <span class="pay__text">Курьеру картой</span>
-            </label>
-
-            <label for="cash-courier" class="pay__label">
-             <input type="radio" class="pay__input cash" id="cash-courier" name="pay">
-             <span class="pay__text">Наличными курьеру</span>
-            </label>
-
-            <label class="pay__label">
-             <input type="text" class="pay__change" placeholder="Сдача с">
-            </label>
+ 
+          <div class="form-order__block">
+ 
+           <div class="form-order__pay pay">
+ 
+            <div class="form-order__title">3. Оплатить</div>
+ 
+            <div class="pay__items">
+             <label for="pay-online" class="pay__label">
+              <input type="radio" checked class="pay__input" id="pay-online" name="pay" value="Оплата онлайн">
+              <span class="pay__text">Оплата онлайн</span>
+             </label>
+ 
+             <label for="pay-courier" class="pay__label">
+              <input type="radio" class="pay__input" id="pay-courier" name="pay" value="Курьеру картой">
+              <span class="pay__text">Курьеру картой</span>
+             </label>
+ 
+             <label for="cash-courier" class="pay__label">
+              <input type="radio" class="pay__input cash" id="cash-courier" name="pay" value="Наличными курьеру">
+              <span class="pay__text">Наличными курьеру</span>
+             </label>
+ 
+             <label class="pay__label">
+              <input type="text" class="pay__change" placeholder="Сдача с">
+             </label>
+            </div>
+ 
            </div>
-
+ 
           </div>
+ 
+          <div class="form-order__block">
+ 
+           <div class="form-order__title">4. Когда доставить</div>
+ 
+           <div class="form-order__person person">
+            <div class="person__time">
+             <label for="time-fast" class="person__label">
+               <input type="radio" class="person__input" id="time-fast" name="time" value="Ближайшее время">
+               <span class="person__text">В ближайшее время</span>
+             </label>
+ 
+             <label for="time-slow" class="person__label">
+               <input type="radio" class="person__input" id="time-slow" name="time" value="Ко времени">
+               <span class="person__text">Ко времени</span>
+             </label>
+            </div>
+ 
+            <div class="person__amount amount-person">
+             <label for="" class="amount-person__label">
+               <input type="text" class="amount-person__input" placeholder="Кол-во персон">
+             </label>
+            </div>
+ 
+            <div class="amount-person__callback callback">
+             <label for="no-callback" class="callback__label">
+             <input type="radio" class="callback__input" id="no-callback" name="callback" value="Не перезванивать">
+               <span class="callback__text">Не перезванивать</span>
+             </label>
+ 
+             <label for="yes-callback" class="callback__label">
+             <input type="radio" class="callback__input" id="yes-callback" name="callback" value="Требуется звонок">
+             <span class="callback__text">Потребуется звонок оператора</span>
+             </label>
+            </div>
+ 
+           </div>
+ 
+           
+ 
+          </div>
+          
+          <div class="form-order__block personal-data">
+           <label for="accept" class="personal-data__label">
+             <input type="checkbox" id="accept" class="personal-data__input">
+             <span class="personal-data__text">Я согласен на обработку моих перс. данных в соответствии с <a href="#">Условиями</a></span>
+           </label>
+ 
+           <button type="submit" class="form-order__btn">Оформить заказ</button>
+          </div>
+ 
+         </form>
+         <!-- форма оформления заказа -->
 
+         <!-- Список товаров -->
+         <div class="order__products order-products">
+
+          <div class="order-products__title">Ваш заказ</div>
+
+          <ul class="order-products__list">
+
+          </ul>
+
+
+          <div class="order-products__total">Итого: <span class="order-products__total-price"></span></div>
          </div>
-        
-
-        </form>
-        <!-- форма оформления заказа -->
+       </div>
 
        </div>
 

@@ -5,9 +5,16 @@
   margin-left: 1rem;
   margin-bottom: 3rem;
  }
+ &__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+ }
 }
 
 .form-order {
+  max-width: 800px;
+  width: 100%;
  &__block {
   background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
   border-radius: 10px; 
@@ -78,9 +85,42 @@
    &:checked ~ .choice__text {
     background-color: $lightgreen;
    }
+   &-time {
+    font-size: 16px;
+    color: #fff;
+    line-height: 19px;
+    font-weight: 500;
+    padding-left: 30px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: url('./../../images/icons/clock.svg') center center no-repeat;
+      background-size: cover;
+    }
+   }
   }
  }
-
+&__btn {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: $lightgreen;
+  border-radius: 10px;
+  padding: 17px 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $darkgreen;
+  }
+}
 }
 
 .address {
@@ -131,7 +171,7 @@
   }
  }
  &__text {
-  font-size: 16px;
+    font-size: 16px;
     color: #fff;
     display: block;
     border: 1px solid $lightgreen;
@@ -165,4 +205,237 @@
    line-height: 19px;
   } 
  }
+}
+
+.person {
+  &__time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  &__text {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    border: 1px solid $lightgreen;
+    border-radius: 10px;
+    padding: 20px 0; 
+    font-weight: 700;
+    min-width: 180px;
+    text-align: center;
+  }
+  &__input {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    &:checked ~ .person__text {
+      background-color: $lightgreen;
+    }
+  }
+
+  .amount-person {
+    margin-bottom: 30px;
+    &__input {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      background-color: transparent;
+      min-height: 60px;
+      height: 100%;
+      padding: 20px 10px 20px 30px;
+      outline: none;
+      margin-right: 15px;
+      color: #fff;
+  &::placeholder {
+   color: #fff;
+   font-size: 16px;
+   line-height: 19px;
+  } 
+    }
+  }
+  
+  .callback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__input {
+      opacity: 0;
+      visibility: hidden;
+      &:checked ~ .callback__text:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &__label {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      } 
+     
+    }
+    
+    &__text {
+      font-size: 14px;
+      line-height: 15px;
+      color: #fff;
+      display: inline-block;
+      margin-left: 15px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-flex;
+        margin-left: -30px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -26px;
+        width: 14px;
+        height: 14px;
+        background-color: $lightgreen;
+        border-radius: 50%;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.personal-data {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  &__input {
+    opacity: 0;
+    visibility: hidden;
+    &:checked ~ .personal-data__text:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__text {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    margin-left: 17px;
+    a {
+      color: $lightgreen
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-55%);
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid $lightgreen
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 50%;
+      transform: translateY(-55%);
+      width: 16px;
+      height: 16px;
+      background: url('../../images/icons/correct.svg') center center no-repeat;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+// список товаров в заказе
+
+.order-products {
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
+    border-radius: 10px;
+    padding: 30px 30px 30px 30px;
+    max-width: 450px;
+    width: 100%;
+    &__title {
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      line-height: 22px;
+      border-bottom: 1px solid rgb(88, 87, 87);
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-height: 350px;
+      overflow: auto;
+    }
+    &__item {
+      list-style: none;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      .order-products__container {
+        display: flex;
+        align-items: flex-start;
+        .order-products__img {
+          max-width: 150px;
+          margin-right: 20px;
+          img {
+            border-radius: 10px;
+          }
+        }
+        .order-products__name {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        .order-products__amount {
+          font-size: 14px;
+          color:rgb(174, 173, 173);
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        .order-products__price {
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+    }
+    &__total {
+      font-size: 20px;
+      color: #fff;
+      margin-top: 30px;
+      &-price {
+        font-size: 26px;
+        font-weight: bold;
+        display: inline-block;
+        padding-left: 15px;
+      }
+    }
 }

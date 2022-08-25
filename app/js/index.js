@@ -63,7 +63,6 @@ const amoutBasket = document.querySelector('.basket__amount-item')
 const totalPriceBasket = document.querySelector('.total__price-pricing')
 const payInput = document.querySelectorAll('.pay__input')
 
-
 let productArr = []
 let keyState = []
 let pricing = []
@@ -120,6 +119,9 @@ document.querySelector("body").addEventListener("click", (e) => {
   if(target.closest('.item-basket__minus')) {
     decreaseItemInBasket(target)
   }
+  if(target.closest('.total__link')) {
+    pushTotalLink()
+  }
 });
 
 
@@ -133,7 +135,15 @@ menuHum.addEventListener("click", openMenu);
 if(localStorage.getItem('product')) {
   productArr = JSON.parse(localStorage.getItem('product'))
   try {
-    productArr.forEach((item) => renderHTMLtoBasket(item))
+    productArr.forEach((item) => renderHTMLtoBasket(item) )
+  } catch (error) {
+    // null
+  }
+}
+if(localStorage.getItem('product')) {
+  productArr = JSON.parse(localStorage.getItem('product'))
+  try {
+    productArr.forEach((item) => renderOrderHTML(item) )
   } catch (error) {
     // null
   }
@@ -555,7 +565,6 @@ function changeTotalPrice (item) {
 }
 
 // блок сдача 
-
 payInput.forEach(item => {
   item.addEventListener('click', () => {
     if(item.classList.contains('cash')) {
@@ -565,3 +574,37 @@ payInput.forEach(item => {
     }
   })
 })
+
+// full price on order
+const totalOrder = []
+const orderTOTAL = () => {
+  productArr.forEach(item => {
+    let itemPrice = parseInt(item.price)
+    let itemAmount = parseInt(item.amount)
+    let total = itemPrice * itemAmount
+    const orderPrice = document.querySelector('.order-products__total-price') 
+    totalOrder.push(total)
+
+    let sum = totalOrder.reduce((a,b)=> a+b)
+    orderPrice.innerText = sum + ' ₽'
+  })
+}
+orderTOTAL()
+// render html for order page
+function renderOrderHTML (item) {
+  const containerOrderList = document.querySelector('.order-products__list')
+
+  const template = `
+    <li class="order-products__item">
+                <div class="order-products__container">
+                  <div class="order-products__img"><img src="./images/food/cold/01.jpg" alt=""></div>
+                  <div class="order-products__content">
+                      <div class="order-products__name">${item.Title}</div>
+                      <div class="order-products__amount">Кол-во: <span>${item.amount}</span></div>
+                      <div class="order-products__price">${item.price}</div>
+                  </div>
+                </div>
+              </li>
+  `
+  containerOrderList.insertAdjacentHTML('beforeend' , template)
+}
