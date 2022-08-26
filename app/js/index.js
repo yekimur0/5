@@ -426,6 +426,7 @@ function removeItem (target) {
     basketText.innerText = 'Корзина пуста'
   }
 
+  checkProductsInBasket()
   changeTotalPrice(item)
   saveState()
   saveProduct()
@@ -608,3 +609,13 @@ function renderOrderHTML (item) {
   `
   containerOrderList.insertAdjacentHTML('beforeend' , template)
 }
+
+// check products on basket 
+function checkProductsInBasket () {
+  const productsContainer = document.querySelector('.items-basket')
+  const modalEmpty = document.querySelector('.modal-empty')
+  if(productsContainer.children.length < 1) {
+    modalEmpty.classList.add('modal-empty-active')
+  }
+}
+

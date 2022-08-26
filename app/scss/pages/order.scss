@@ -1,6 +1,14 @@
 .order {
  padding-top: 5rem;
-
+@media(max-width: $tabletlg) {
+  padding-top: 8rem;
+} 
+@media(max-width: $tablet) {
+  padding-top: 12rem;
+}
+@media(max-width: $phone) {
+  padding-top: 15rem;
+}
  &__title {
   margin-left: 1rem;
   margin-bottom: 3rem;
@@ -9,12 +17,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media(max-width: $tabletlg) {
+    flex-direction: column-reverse;
+    row-gap: 30px;
+  }
  }
 }
 
 .form-order {
   max-width: 800px;
   width: 100%;
+  margin-right: 20px;
  &__block {
   background: linear-gradient(90deg, #494544 0%, #504B4A 100%);
   border-radius: 10px; 
@@ -35,6 +48,10 @@
   display: flex;
   align-items: center;
   width: 100%;
+  @media(max-width: $phone) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
  }
  &__input {
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -47,10 +64,14 @@
   outline: none;
   margin-right: 15px;
   color: #fff;
+  font-size: 14px;
   &::placeholder {
    color: #fff;
    font-size: 16px;
    line-height: 19px;
+   @media(max-width: $tablet) {
+    font-size: 13px;
+   }
   } 
  }
 
@@ -59,6 +80,10 @@
   align-items: center;
   text-align: center;
   margin-bottom: 30px;
+  @media(max-width: $xl) {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
   &__label {
    position: relative;
    margin-right: 20px;
@@ -140,6 +165,10 @@
    &:not(:last-child) {
     margin-bottom: 15px;
    }
+   @media(max-width: $phone) {
+    flex-direction: column;
+    row-gap: 15px;
+   }
   }
  }
  
@@ -211,7 +240,11 @@
   &__time {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 30px;
+    @media(max-width: $phone) {
+      row-gap: 20px;
+    }
   }
   &__label {
     display: flex;
@@ -253,10 +286,16 @@
       outline: none;
       margin-right: 15px;
       color: #fff;
+      @media(max-width: $tablet) {
+        min-width: 265px;
+      }
   &::placeholder {
    color: #fff;
    font-size: 16px;
    line-height: 19px;
+   @media(max-width: $tablet) {
+    font-size: 14px;
+   }
   } 
     }
   }
@@ -321,6 +360,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media(max-width: $tablet) {
+    row-gap: 30px;
+  }
   &__label {
     display: flex;
     align-items: center;
@@ -378,6 +420,9 @@
     padding: 30px 30px 30px 30px;
     max-width: 450px;
     width: 100%;
+    @media(max-width: $tabletlg) {
+      max-width: 800px;
+    }
     &__title {
       font-size: 18px;
       color: #fff;

@@ -371,6 +371,9 @@ $widthContainer: 1300;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
         margin-right: 13px;
+        @media(max-width: $tabletlg) {
+            padding: 3px 10px;
+        }
         @media(max-width: $phone) {
             background: url('../images/icons/cart.svg') center center no-repeat;
             background-size: contain;
@@ -428,6 +431,9 @@ $widthContainer: 1300;
         padding: 28px 0;
         justify-content: space-between;
         column-gap: 2rem;
+        @media(max-width: $tabletlg) {
+            column-gap: 1rem;
+        }
     }   
     &__item {
         list-style: none;

@@ -18,6 +18,14 @@
         width: 4px;
         height: 1.8rem;
         background-color: $darkgreen;
+        @media(max-width: $tabletlg) {
+            left: -15px;
+            top: 7px
+        }
+        @media(max-width: $tablet) {
+            left: -15px;
+            top: 5px
+        }
         @media(max-width: $phone) {
             top: 8px;
         }
